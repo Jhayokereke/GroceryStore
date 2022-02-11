@@ -4,7 +4,7 @@ namespace GroceryStore
 {
     public interface IStore : IStoreManager, IStoreStaff
     {
-
+        
     }
     public interface IStoreManager
     {
@@ -19,8 +19,8 @@ namespace GroceryStore
     public interface IStoreStaff
     {
         void RemoveFromProduct(string id, int numberChange);
+        Product GetProduct(string id);
     }
-
 
     public class Store : IStore
     {
@@ -64,6 +64,17 @@ namespace GroceryStore
             Product prod = new Product(nameOfProduct, quantity);
             Products.Add(prod);
             return prod.Id;
+        }
+
+        public Product GetProduct(string id)
+        {
+            foreach (var item in Products)
+            {
+                if (item.Id == id)
+                    return item;
+            }
+
+            return null;
         }
     }
 }
