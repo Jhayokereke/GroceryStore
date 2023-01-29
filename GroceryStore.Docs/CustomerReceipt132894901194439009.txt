@@ -1,0 +1,8 @@
+Customer Receipt
+Wed, 16 Feb 2022 02:01:59 PM
+Ije garri @ 300 X 5 = 1500
+
+
+Total : ₦1,500.00
+VAT : ₦112.50
+Sub-Total : ₦1,612.50

@@ -1,4 +1,5 @@
 using GroceryStore.Core;
+using GroceryStore.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,10 +19,9 @@ namespace GroceryStore.UI
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var products = GroceryStore.Core.Program.CreateProducts();
-            var store = (IStore)DIFactory.GenerateDI("IStore");
-            store.Products = products;
-            Application.Run(new Checkout(store));
+            DIFactory.Initialize();
+            var storeKeeper = (IStoreKeeper)DIFactory.GenerateDI("IStore");
+            Application.Run(new Checkout(storeKeeper));
         }
     }
 }

@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GroceryStore.Data\GroceryStore.Data.csproj" />
     <ProjectReference Include="..\GroceryStore.Models\GroceryStore.Models.csproj" />
   </ItemGroup>
 
